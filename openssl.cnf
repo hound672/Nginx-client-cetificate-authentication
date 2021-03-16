@@ -13,7 +13,6 @@ crlnumber = $dir/crlnumber              # The current crl number
                                         # must be commented out to leave a V1 CRL
 crl = $dir/crl.pem                      # The current CRL
 private_key = $dir/private/ca.key       # The private key
-RANDFILE    = $dir/private/.rand        # private random number file
 
 x509_extensions = usr_cert              # The extentions to add to the cert
 
@@ -22,7 +21,7 @@ cert_opt = ca_default                   # Certificate field options
 
 default_days    = 365                   # how long to certify for
 default_crl_days= 30                    # how long before next CRL
-default_md    = sha1                    # use public key default MD
+default_md    = sha256                    # use public key default MD
 preserve    = no                        # keep passed DN ordering
 
 policy = policy_match

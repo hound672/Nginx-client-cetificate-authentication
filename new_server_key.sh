@@ -17,7 +17,7 @@ SSL_PRIVATE_DIR="$SSL_DIR/${CA_NAME}/private"
 SSL_CERTS_DIR="$SSL_DIR/${CA_NAME}/certs"
 
 # Create the Server Key, CSR, and Certificate
-openssl genrsa -des3 -out $SSL_PRIVATE_DIR/server.key 2048
+openssl genrsa -aes256 -out $SSL_PRIVATE_DIR/server.key 2048
 openssl req -new -key $SSL_PRIVATE_DIR/server.key -out $SSL_PRIVATE_DIR/server.csr
 
 # Remove the necessity of entering a passphrase for starting up nginx with SSL using the private key

@@ -13,6 +13,6 @@ fi
 USERNAME="$1"
 
 # Create the Client Key and CSR
-openssl genrsa -des3 -out ${USERNAME}.key 4096
+openssl genrsa -aes256 -out ${USERNAME}.key 4096
 openssl req -new -key ${USERNAME}.key -out ${USERNAME}.csr
 

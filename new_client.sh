@@ -21,7 +21,7 @@ USERS_DIR="${SSL_CERTS_DIR}/users"
 mkdir -p ${USERS_DIR}
 
 # Create the Client Key and CSR
-openssl genrsa -des3 -out ${USERS_DIR}/${USERNAME}.key 4096
+openssl genrsa -aes256 -out ${USERS_DIR}/${USERNAME}.key 4096
 openssl req -new -key ${USERS_DIR}/${USERNAME}.key -out ${USERS_DIR}/${USERNAME}.csr
 
 # Sign the client certificate with our CA cert.  Unlike signing our own server cert, this is what we want to do.

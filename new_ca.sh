@@ -25,7 +25,7 @@ touch $SSL_DIR/${CA_NAME}/index.txt
 echo 01 > $SSL_DIR/${CA_NAME}/crlnumber
 
 # Create the CA Key and Certificate for signing Client Certs (good for 3 yrs)
-openssl genrsa -des3 -out $SSL_PRIVATE_DIR/ca.key 4096
+openssl genrsa -aes256 -out $SSL_PRIVATE_DIR/ca.key 4096
 openssl req -new -x509 -days 1095 -key $SSL_PRIVATE_DIR/ca.key -out $SSL_CERTS_DIR/ca.crt
 
 # Create a Certificate Revocation list for removing 'user certificates.'
