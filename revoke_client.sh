@@ -24,3 +24,5 @@ openssl ca -name ${CA_NAME} -revoke ${USERS_DIR}/${USERNAME}.crt -keyfile $SSL_P
 # Update the Certificate Revocation list for removing 'user certificates.'
 openssl ca -name ${CA_NAME} -gencrl -keyfile $SSL_PRIVATE_DIR/ca.key -cert $SSL_CERTS_DIR/ca.crt -out $SSL_PRIVATE_DIR/ca.crl -crldays 1095
 
+# remove user cert
+rm ${USERS_DIR}/${USERNAME}*
